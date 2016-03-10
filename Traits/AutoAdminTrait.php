@@ -38,10 +38,12 @@ trait AutoAdminTrait {
                 /* @var $admin \Modules\Admin\Components\ModelAdmin|\Modules\Admin\Components\NestedAdmin */
                 $admin = new $class;
 
-                $items[] = [
-                    'name' => $admin->getVerboseName(),
-                    'adminClass' => $className
-                ];
+                if ($admin->autoCollect) {
+                    $items[] = [
+                        'name' => $admin->getVerboseName(),
+                        'adminClass' => $className
+                    ];
+                }
             }
         }
 

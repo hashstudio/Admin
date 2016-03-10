@@ -77,6 +77,11 @@ abstract class ModelAdmin
      * @var string
      */
     protected $moduleName;
+    /**
+     * Collect this admin in AutoAdminTrait
+     * @var bool
+     */
+    public $autoCollect = true;
 
     public function setModuleName($name)
     {
